@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Request Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #requestFormContainer { display: none; }
+        .header { position: relative; height: 60px; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .header img { position: absolute; top: 10px; height: 40px; }
+        .header .logo-left { left: 10px; }
+        .header .logo-right { right: 10px; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md border-b border-gray-200 relative">
+        <div class="container mx-auto py-4 flex items-center justify-between relative">
+            <!-- Left-aligned logos -->
+            <div class="flex items-center space-x-4">
+                <img src="spur_logo.svg" alt="Spur Steak Ranches" class="h-10">
+            </div>
+            
+            <!-- Central logo -->
+            <div class="absolute inset-x-0 flex justify-center">
+                <img src="gmcplacelogo-2.png" alt="Eagle Peak Spur" class="h-10">
+            </div>
+            
+            <!-- Right-aligned logo -->
+            <div class="flex items-center space-x-4">
+                <img src="optiven-group-logo.png" alt="Optiven" class="h-10">
+            </div>
+        </div>
+        
+        <!-- Location Description -->
+        <div class="container mx-auto text-gray-700 text-sm font-semibold text-center py-2">
+            The Hub (Karen) - Dagoretti Road
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <div id="loginFormContainer" class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
+            <form id="loginForm">
+                <h2 class="text-3xl font-bold mb-8 text-center">Login</h2>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="username">Username</label>
+                    <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="password">Password</label>
+                    <input class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Salary Advance/IOU Request Form -->
+    <div id="requestFormContainer" class="container mx-auto py-10">
+        <form id="advanceForm" action="submit_form.php" method="POST" class="bg-white shadow-md rounded-lg p-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">Eagle Peak Spur Salary Advance/IOU Request Form</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="employeeId" class="block text-gray-700 font-semibold">Employee I.D No.</label>
+                    <input type="text" id="employeeId" name="employeeId" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="designation" class="block text-gray-700 font-semibold">Designation</label>
+                    <input type="text" id="designation" name="designation" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="department" class="block text-gray-700 font-semibold">Department</label>
+                    <select id="department" name="department" required class="w-full px-4 py-3 border rounded-lg">
+                        <option value="" disabled selected>Select your department</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="IT">IT</option>
+                        <option value="Operations">Operations</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="amountRequested" class="block text-gray-700 font-semibold">Amount Requested (Kshs)</label>
+                    <input type="number" id="amountRequested" name="amountRequested" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="amountInWords" class="block text-gray-700 font-semibold">Amount in words</label>
+                    <input type="text" id="amountInWords" name="amountInWords" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="reason" class="block text-gray-700 font-semibold">Reason(s)</label>
+                    <input type="text" id="reason" name="reason" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="applicantSignature" class="block text-gray-700 font-semibold">Applicant Signature</label>
+                    <input type="text" id="applicantSignature" name="applicantSignature" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="date" class="block text-gray-700 font-semibold">Date</label>
+                    <input type="date" id="date" name="date" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="recoveryAmount" class="block text-gray-700 font-semibold">Recovery Amount (KES)</label>
+                    <input type="number" id="recoveryAmount" name="recoveryAmount" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="installments" class="block text-gray-700 font-semibold">No. of installments (Max 1 month)</label>
+                    <input type="number" id="installments" name="installments" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="payableMonth" class="block text-gray-700 font-semibold">Payable for the month of</label>
+                    <input type="month" id="payableMonth" name="payableMonth" required class="w-full px-4 py-3 border rounded-lg">
+                </div> 
+                <div class="mb-4">
+                    <label for="receivedBy" class="block text-gray-700 font-semibold">Received by Eagle Peak Spur Manager/HR</label>
+                    <input type="text" id="receivedBy" name="receivedBy" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="accountsApprovalName" class="block text-gray-700 font-semibold">Accounts Approval: Name</label>
+                    <input type="text" id="accountsApprovalName" name="accountsApprovalName" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="accountsSignature" class="block text-gray-700 font-semibold">Signature</label>
+                    <input type="text" id="accountsSignature" name="accountsSignature" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="accountsDate" class="block text-gray-700 font-semibold">Date</label>
+                    <input type="date" id="accountsDate" name="accountsDate" required class="w-full px-4 py-3 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label for="notApprovedReasons" class="block text-gray-700 font-semibold">Not approved reason(s)</label>
+                    <textarea id="notApprovedReasons" name="notApprovedReasons" class="w-full px-4 py-3 border rounded-lg"></textarea>
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

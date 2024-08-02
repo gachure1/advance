@@ -1,0 +1,62 @@
+# Eagle Peak Spur Salary Advance/IOU Request Form
+
+This project includes a login page and a salary advance/IOU request form for Eagle Peak Spur employees. The form submission data is sent to a server for processing.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- User authentication with dummy credentials
+- Conditional form display based on authentication
+- Salary advance/IOU request form submission
+
+## Technologies
+
+- HTML
+- CSS (Tailwind CSS)
+- JavaScript
+- PHP (for form processing)
+
+## Setup
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/gachure1/advance
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd advance
+    ```
+
+3. Open `index.html` in your web browser to view the application.
+
+## Usage
+
+1. Enter the username and password to log in (dummy credentials: `user1`/`pass1`).
+2. Fill out the salary advance/IOU request form.
+3. Submit the form to send the data to the server.
+
+## Project Structure
+
+```plaintext
+.
+├── index.html
+├── style.css
+├── script.js
+├── submit_form.php
+└── assets
+    ├── images
+    │   ├── spur_logo.svg
+    │   ├── gmcplacelogo-2.png
+    │   └── optiven-group-logo.png
+    └── css
+        └── tailwind.min.css

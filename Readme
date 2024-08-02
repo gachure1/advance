@@ -29,8 +29,7 @@ This project includes a login page and a salary advance/IOU request form for Eag
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/gachure1/advance
-    ```
+    git clone https://github.com/gachure1/advance.git
 
 2. Navigate to the project directory:
     ```sh
